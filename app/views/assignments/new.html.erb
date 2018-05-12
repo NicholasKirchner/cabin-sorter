@@ -1,0 +1,5 @@
+<%= form_tag({controller: "assignments", action: "create"}, multipart: true) do %>
+  <%= email_field(:user, :email) %>
+  <%= file_field_tag :preferences %>
+  <%= submit_tag("Submit") %>
+<% end %>
