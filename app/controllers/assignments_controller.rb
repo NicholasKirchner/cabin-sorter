@@ -1,10 +1,14 @@
+require 'csv'
+
 class AssignmentsController < ApplicationController
 
   def new
   end
 
   def create
-    CSV.read(params[:preferences].path, headers: true)
+    email = ""
+    table = CSV.read(params[:preferences].path, headers: true)
+    SorterWorker.perform_async(table, email)
   end
   
 end
