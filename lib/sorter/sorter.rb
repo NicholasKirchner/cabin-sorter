@@ -13,8 +13,8 @@ module Sorter
       @best_sortings = assignments.map(&:cabin_rosters).flatten
     end
 
-    def convert_to_csv(output_file)
-      ::CSV.open(output_file, "wb") do |result|
+    def convert_to_csv
+      ::CSV.generate do |result|
         best_sortings.each_with_index do |cabin, idx|
           result << ["Cabin #{idx + 1}"]
           result << ["Name", "Gender", "Status", "Night"]
