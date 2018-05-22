@@ -21,7 +21,7 @@ module Sorter
         pref[:student] = people.find { |p| p.is_a?(Student) && p.name == pref[:student] }
       end
     end
-    Sorter::Sorter.new(people)
+    ::Sorter::Sorter.new(people)
   end
 
 end
