@@ -1,5 +1,4 @@
 require 'csv'
-Dir[Rails.root.join('lib', 'sorter', '*.rb')].each { |file| require file }
 
 module Sorter
 
