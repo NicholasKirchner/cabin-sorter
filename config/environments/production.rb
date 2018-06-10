@@ -64,6 +64,8 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "cabin-separator_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
+  #TODO: Something like:
+  #config.action_mailer.default_url_options = { host: 'something', port: 587 }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
