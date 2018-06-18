@@ -19,3 +19,16 @@
 .center {
     text-align: center;
 }
+
+.summary-panel {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.summary-card {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
