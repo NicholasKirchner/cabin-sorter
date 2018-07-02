@@ -1,7 +1,7 @@
 <%= form_for @retreat, url: {action: "create"} do |f| %>
   <%= f.text_field :description %>
   <%= f.text_field :cabin_capacity %>
-  <%= f.text_area :male_students %>
-  <%= f.text_area :female_students %>
+  <%= f.text_area :male_student_list %>
+  <%= f.text_area :female_student_list %>
   <%= f.submit "Create" %>
 <% end %>
