@@ -1,7 +1,19 @@
 <%= form_for @retreat, url: {action: "create"} do |f| %>
+  <%= f.label :description, "Description" %>
   <%= f.text_field :description %>
+  <br>
+
+  <%= f.label :cabin_capacity, "Cabin Capacity" %>
   <%= f.text_field :cabin_capacity %>
+  <br>
+
+  <%= f.label :male_student_list, "Male Students" %>
   <%= f.text_area :male_student_list %>
+  <br>
+
+  <%= f.label :female_student_list, "Female Students" %>
   <%= f.text_area :female_student_list %>
-  <%= f.submit "Create" %>
+
+  <br>
+  <%= f.submit "Create", class: "btn btn-large btn-primary" %>
 <% end %>
