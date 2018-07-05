@@ -13,5 +13,8 @@
 class Camper < ApplicationRecord
 
   belongs_to :retreat
+
+  enum gender: [:male, :female]
+  enum type:   [:student, :chaperone]
   
 end
