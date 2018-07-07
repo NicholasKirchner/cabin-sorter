@@ -20,8 +20,8 @@ class Retreat < ApplicationRecord
   end
 
   def male_student_list=(a_string)
-    a_string.split("\n").each do |student|
-      self.male_students << Camper.new(type: 0, name: student, gender: 0)
+    self.male_students = a_string.split("\n").map do |name|
+      Camper.new(type: :student, name: name.strip, gender: :male)
     end
   end
 
@@ -30,8 +30,8 @@ class Retreat < ApplicationRecord
   end
 
   def female_student_list=(a_string)
-    a_string.split("\n").each do |student|
-      self.female_students << Camper.new(type: 0, name: student, gender: 1)
+    self.female_students = a_string.split("\n").each do |name|
+      Camper.new(type: :student, name: student, gender: :female)
     end
   end
 
