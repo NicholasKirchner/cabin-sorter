@@ -7,6 +7,19 @@ class RetreatsController < ApplicationController
   end
 
   def create
+    @retreat = Retreat.build(retreat_params)
+    if @retreat.save
+      flash[:success] = "Retreat saved"
+      redirect_to root_url
+    else
+      redirect_to root_url
+    end
+  end
+
+  private
+
+  def retreat_params
+    params.require(:retreat)
   end
 
 end
