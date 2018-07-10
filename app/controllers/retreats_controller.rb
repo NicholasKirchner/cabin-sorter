@@ -16,6 +16,12 @@ class RetreatsController < ApplicationController
     end
   end
 
+  def destroy
+    @retreat.destroy
+    flash[:success] = "Retreat deleted."
+    redirect_to root_url
+  end
+
   private
 
   def retreat_params
