@@ -3,11 +3,11 @@
 # Table name: campers
 #
 #  id         :bigint(8)        not null, primary key
-#  gender     :integer
-#  name       :string
+#  gender     :integer          not null
+#  name       :string           not null
 #  pin_hash   :string
-#  type       :integer
-#  retreat_id :integer
+#  type       :integer          not null
+#  retreat_id :integer          not null
 #
 
 class Camper < ApplicationRecord

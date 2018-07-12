@@ -10,23 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_22_205649) do
+ActiveRecord::Schema.define(version: 2018_07_12_172341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "campers", force: :cascade do |t|
-    t.integer "retreat_id"
-    t.integer "type"
-    t.string "name"
-    t.integer "gender"
+    t.integer "retreat_id", null: false
+    t.integer "type", null: false
+    t.string "name", null: false
+    t.integer "gender", null: false
     t.string "pin_hash"
   end
 
   create_table "retreats", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "description"
-    t.integer "cabin_capacity"
+    t.integer "user_id", null: false
+    t.string "description", null: false
+    t.integer "cabin_capacity", default: 12, null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -3,9 +3,9 @@
 # Table name: retreats
 #
 #  id             :bigint(8)        not null, primary key
-#  cabin_capacity :integer
-#  description    :string
-#  user_id        :integer
+#  cabin_capacity :integer          default(12), not null
+#  description    :string           not null
+#  user_id        :integer          not null
 #
 
 class Retreat < ApplicationRecord
