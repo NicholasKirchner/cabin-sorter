@@ -1,6 +1,7 @@
 module Sorter
   class CabinRoster
 
+    #TODO: eventually refactor these out and pass in as parameters with these defaults
     CABIN_CAPACITY = 12
     MAX_STUDENTS_PER_CHAPERONE = 5
     MIN_STUDENTS_PER_CHAPERONE = 2
@@ -36,9 +37,14 @@ module Sorter
     
     def good_supervised_nights
       (1..NIGHTS).count do |night|
-        students =   @people.select { |p| p.is_a?(Student)   && p.present_on_night?(night) }.length
-        chaperones = @people.select { |p| p.is_a?(Chaperone) && p.present_on_night?(night) }.length
-        students < chaperones * MAX_STUDENTS_PER_CHAPERONE && students > chaperones * MIN_STUDENTS_PER_CHAPERONE && chaperones >= MIN_CHAPERONES_PER_CABIN
+        students =   @people.select { |p| p.is_a?(Student)   && p.present_on_night?(night) }
+                            .length
+        chaperones = @people.select { |p| p.is_a?(Chaperone) && p.present_on_night?(night) }
+                            .length
+
+        students < chaperones * MAX_STUDENTS_PER_CHAPERONE &&
+        students > chaperones * MIN_STUDENTS_PER_CHAPERONE &&
+        chaperones >= MIN_CHAPERONES_PER_CABIN
       end
     end
 
