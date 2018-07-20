@@ -7,15 +7,20 @@
   <%= f.text_field :cabin_capacity %>
   <br>
 
-  <%= f.label :male_student_list, "Male Students" %>
-  <br>
-  <%= f.text_area :male_student_list %>
+  <%= f.label :number_male_students, "Number of male students" %>
+  <%= f.text_field :number_male_students %>
   <br>
 
-  <%= f.label :female_student_list, "Female Students" %>
+  <%= f.label :number_female_students, "Number of female students" %>
+  <%= f.text_field :number_female_students %>
   <br>
-  <%= f.text_area :female_student_list %>
 
+  <%= f.label :number_male_chaperones, "Number of male chaperones" %>
+  <%= f.text_area :number_male_chaperones %>
   <br>
-  <%= f.submit "Create", class: "btn btn-large btn-primary" %>
+
+  <%= f.label :number_female_chaperones, "Number of female chaperones" %>
+  <%= f.text_area :number_female_chaperones %>
+
+  <%= f.submit "Continue", class: "btn btn-large btn-primary" %>
 <% end %>
